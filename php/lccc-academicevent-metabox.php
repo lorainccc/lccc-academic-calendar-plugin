@@ -32,10 +32,10 @@ function academic_event_metabox_html( $post) {
 <script>
 jQuery(document).ready(function(){
 jQuery('#event_start_date').datepicker({
-	dateFormat: "mm/dd/yy"
+	dateFormat: "yy-mm-dd"
 });
 jQuery('#event_end_date').datepicker({
-	dateFormat: "mm/dd/yy"
+	dateFormat: "yy-mm-dd"
 });
 
 });
