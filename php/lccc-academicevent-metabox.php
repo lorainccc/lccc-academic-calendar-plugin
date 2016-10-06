@@ -44,7 +44,7 @@ jQuery('#event_end_date').datepicker({
 
 	<p>
 
-		<input type="checkbox" name="academic_event_metabox_display_in_event_feed" id="academic_event_metabox_display_in_event_feed" value="true" <?php echo ( academic_event_metabox_get_meta( 'academic_event_metabox_display_in_event_feed' ) === 'true' ) ? 'checked' : ''; ?>>
+		<input type="checkbox" name="academic_event_metabox_display_in_event_feed" id="academic_event_metabox_display_in_event_feed" value="show" <?php echo ( academic_event_metabox_get_meta( 'academic_event_metabox_display_in_event_feed' ) === 'show' ) ? 'checked' : ''; ?>>
 		<label for="academic_event_metabox_display_in_event_feed"><?php _e( 'Display In Event Feed', 'academic_event_metabox-academic-event-metabox' ); ?></label>	</p>
 <h4 class="metabox-field-title">Acdemic Event Start Date:</h4>
 
