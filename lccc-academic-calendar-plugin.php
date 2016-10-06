@@ -79,3 +79,22 @@ function run_lccc_academic_calendar_plugin() {
 
 }
 run_lccc_academic_calendar_plugin();
+
+// Add various fields to the JSON output
+function academic_eventapi_register_fields() {
+		// Display in the Event Feed
+	register_api_field( 'lccc_academicevent',
+		'display_in_event_feed',
+		array(
+			'get_callback'		=> 'lcccacademic_display_in_event_feed',
+			'update_callback'	=> null,
+			'schema'			=> null
+		)
+	);
+}
+function lcccacademic_display_in_event_feed ( $object, $field_name, $request ) {
+	$displayinfeed = academic_event_metabox_get_meta('academic_event_metabox_display_in_event_feed');
+	return $displayinfeed;
+}
+
+add_action( 'rest_api_init', 'academic_eventapi_register_fields');
