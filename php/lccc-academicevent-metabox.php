@@ -55,8 +55,15 @@ jQuery('#event_end_date').datepicker({
 <p>
 		<label for="event_end_date"><?php _e( 'Academic Event End date:', 'academic_event_metabox-academic-event-metabox' ); ?></label><br>
 		<input type="text" name="event_end_date" id="event_end_date" value="<?php echo academic_event_metabox_get_meta( 'event_end_date' ); ?>">
-	</p>	
-
+	</p>
+<p>
+ <label for="event_url_label"><?php _e( 'Academic Event URL Label:', 'academic_event_metabox-academic-event-metabox' );?></label><br>
+ <input type="text" name="event_url_label" id="event_url_label" value="<?php echo academic_event_metabox_get_meta( 'event_url_label' ); ?>" style="width:400px;">
+</p>
+<p>
+  <label for="event_url"><?php _e( 'Academic Event URL:', 'academic_event_metabox-academic-event-metabox' ); ?></label><br>
+  <input type="text" name="event_url" id="event_url" value="<?php echo academic_event_metabox_get_meta( 'event_url' ); ?>" style="width:600px;">
+</p>
 
 <?php
 }
@@ -76,7 +83,12 @@ function academic_event_metabox_save( $post_id ) {
 	
 		if ( isset( $_POST['event_end_date'] ) )
    update_post_meta( $post_id, 'event_end_date', esc_attr( $_POST['event_end_date'] ) ); 
-	
+
+  if ( isset ( $_POST['event_url_label'] ) )
+   update_post_meta( $post_id, 'event_url_label', esc_attr( $_POST['event_url_label'] ) ); 
+ 
+  if ( isset ( $_POST['event_url'] ) )
+   update_post_meta( $post_id, 'event_url', esc_attr( $_POST['event_url'] ) );
 }
 add_action( 'save_post', 'academic_event_metabox_save' );
 
