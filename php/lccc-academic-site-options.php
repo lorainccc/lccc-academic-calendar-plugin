@@ -101,7 +101,8 @@ function lccc_spring_active_category_fields_html() {
 	
 	$selectedCategory = get_option('lccc_spring_active_category', '' );
 
-  echo '<select name="lccc_spring_active_category" id="lccc_spring_active_category">';
+ echo '<select name="lccc_spring_active_category" id="lccc_spring_active_category">';
+	echo '<option value="none" id="none">No calendar</option>';
 	foreach($lc_categories as $category){
 			echo '<option value="' . $category->slug .'" id="' . $category->slug . '"', $selectedCategory == $category->slug ? 'selected="selected"' : '', '>', $category->name, '</option>';
 			}
@@ -148,7 +149,8 @@ jQuery('#lccc_summer_semester_enddate').datepicker({
 	
 	$selectedCategory = get_option('lccc_summer_active_category', '' );
 
-  echo '<select name="lccc_summer_active_category" id="lccc_summer_active_category">';
+ echo '<select name="lccc_summer_active_category" id="lccc_summer_active_category">';
+	echo '<option value="none" id="none">No calendar</option>';
 	foreach($lc_categories as $category){
 			echo '<option value="' . $category->slug .'" id="' . $category->slug . '"', $selectedCategory == $category->slug ? 'selected="selected"' : '', '>', $category->name, '</option>';
 			}
@@ -196,11 +198,12 @@ jQuery('#lccc_fall_semester_enddate').datepicker({
 	
 	$selectedCategory = get_option('lccc_fall_active_category', '' );
 
-  echo '<select name="lccc_fall_active_category" id="lccc_fall_active_category">';
+ echo '<select name="lccc_fall_active_category" id="lccc_fall_active_category">';
+	echo '<option value="none" id="none">No calendar</option>';
 	foreach($lc_categories as $category){
 			echo '<option value="' . $category->slug .'" id="' . $category->slug . '"', $selectedCategory == $category->slug ? 'selected="selected"' : '', '>', $category->name, '</option>';
 			}
-		echo '</select>';
+	echo '</select>';
 	
 }
 	
